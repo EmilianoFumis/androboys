@@ -1,0 +1,35 @@
+$texto1="colores";
+$texto2="lor";
+
+function contiene($texto1, $texto2){
+
+    $arr1=str_split($texto1);
+    $arr2=str_split($texto2);
+    $coincide=0;
+    $e=0;
+
+    for($i=0; $i<count($arr1); $i++){
+
+            if($arr1[$i]==$arr2[$e]){
+
+                $coincide+=1;   $e++;  //si coincide avanza un lugar en el segundo array
+
+                if($e == count($arr2)){
+
+                    break;         }  //para que no quede fuera de rango el segundo array
+
+            }
+
+            else{
+
+                $coincide = 0;  $e=0;}
+
+    }
+
+    var_dump((bool) $coincide);
+    return $coincide;
+
+}
+
+$resu=contiene($texto1, $texto2);
+echo 'el resultado es: '.$resu;
